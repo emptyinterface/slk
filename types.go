@@ -395,26 +395,47 @@ type (
 	//     "ts": 123456789
 	// }
 	MessageAttachment struct {
-		AuthorIcon string                    `json:"author_icon,omitempty"`
-		AuthorLink string                    `json:"author_link,omitempty"`
-		AuthorName string                    `json:"author_name,omitempty"`
-		Color      string                    `json:"color,omitempty"`
-		Fallback   string                    `json:"fallback,omitempty"`
-		Fields     []*MessageAttachmentField `json:"fields,omitempty"`
-		Footer     string                    `json:"footer,omitempty"`
-		FooterIcon string                    `json:"footer_icon,omitempty"`
-		ImageURL   string                    `json:"image_url,omitempty"`
-		MarkdownIn []string                  `json:"mrkdwn_in,omitempty"`
-		Pretext    string                    `json:"pretext,omitempty"`
-		Text       string                    `json:"text,omitempty"`
-		ThumbURL   string                    `json:"thumb_url,omitempty"`
-		Title      string                    `json:"title,omitempty"`
-		TitleLink  string                    `json:"title_link,omitempty"`
-		Timestamp  int                       `json:"ts"`
+		AuthorIcon     string                     `json:"author_icon,omitempty"`
+		AuthorLink     string                     `json:"author_link,omitempty"`
+		AuthorName     string                     `json:"author_name,omitempty"`
+		Color          string                     `json:"color,omitempty"`
+		Fallback       string                     `json:"fallback,omitempty"`
+		Fields         []*MessageAttachmentField  `json:"fields,omitempty"`
+		Footer         string                     `json:"footer,omitempty"`
+		FooterIcon     string                     `json:"footer_icon,omitempty"`
+		ImageURL       string                     `json:"image_url,omitempty"`
+		MarkdownIn     []string                   `json:"mrkdwn_in,omitempty"`
+		Pretext        string                     `json:"pretext,omitempty"`
+		Text           string                     `json:"text,omitempty"`
+		ThumbURL       string                     `json:"thumb_url,omitempty"`
+		Title          string                     `json:"title,omitempty"`
+		TitleLink      string                     `json:"title_link,omitempty"`
+		Timestamp      int                        `json:"ts"`
+		CallbackId     string                     `json:"callback_id"`
+		AttachmentType string                     `json:"attachment_type"`
+		Actions        []*MessageAttachmentAction `json:"actions"`
 	}
+
 	MessageAttachmentField struct {
 		Short bool   `json:"short"`
 		Title string `json:"title,omitempty"`
 		Value string `json:"value,omitempty"`
+	}
+
+	// adding for button support
+	MessageAttachmentAction struct {
+		Name    string `json:"name,omitempty"`
+		Text    string `json:"text,omitempty"`
+		Style   string `json:"style,omitempty"`
+		Type    string `json:"type,omitempty"`
+		Value   string `json:"value,omitempty"`
+		Confirm *MessageAttachmentActionConfirm
+	}
+
+	MessageAttachmentActionConfirm struct {
+		Title       string `json:"title,omitempty"`
+		Text        string `json:"text,omitempty"`
+		OkText      string `json:"ok_text,omitempty"`
+		DismissText string `json:"dismiss_text,omitempty"`
 	}
 )
