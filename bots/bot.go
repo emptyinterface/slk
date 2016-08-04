@@ -135,7 +135,7 @@ func NewBot(token, channel string) (*Bot, error) {
 					fmt.Fprintf(&buf, ">\t\t\t\t_Last run: %s_\n", ic.lastRun.Format(helpDateTimeFormat))
 				}
 			}
-			fmt.Fprintln(&buf, ">*BotListeners:*")
+			fmt.Fprintln(&buf, ">*Bot Listeners:*")
 			for r, l := range bot.listeners {
 				fmt.Fprintf(&buf, ">\t`%s`: %s\n", r.String(), l.description)
 			}
