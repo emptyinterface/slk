@@ -336,7 +336,7 @@ func (bot *Bot) Run() error {
 				continue
 			}
 
-			botprefix := fmt.Sprintf("<@%s>:", bot.User.ID)
+			botprefix := fmt.Sprintf("<@%s>", bot.User.ID)
 
 			// if has prefix, run command after
 			if strings.HasPrefix(msg.Text, botprefix) {
